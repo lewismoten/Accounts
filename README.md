@@ -3,6 +3,7 @@
 Setup a simple full-stack PHP & MySQL website that allows you to create and manage accounts password, email, and 2FA.
 
 - Create account for user name and email
+- CAPTCHA
 - Verify email before asking to associate a password
 - Validate alpha-numeric account name between 3-64 characters
 - Validate email up to 64 characters

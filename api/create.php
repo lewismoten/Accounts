@@ -38,9 +38,8 @@ mail(
     $obj->email, 
     'Please verify your email address', 
     'Please verify your email address:
-    https://regaldragondanceparty.com/accounts/verify.php?account='.
-        $obj->accountName.'&nonce='.$row['nonce'],
-        "From: webmaster@regaldragondanceparty.com"
+    '.UI_URL.'verify.php?account='.$obj->accountName.'&nonce='.$row['nonce'],
+    "From: ".EMAIL_FROM.""
     );
 
 showData('Verify Email');

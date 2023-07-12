@@ -6,9 +6,10 @@ $obj = getInput();
 $db = openDatabase();
 
 $query = sprintf(
-    "CALL create_account('%s', '%s', @p0, @p1, @p2);",
+    "CALL create_account('%s', '%s', '%s', @p0, @p1, @p2);",
     $db->real_escape_string($obj->accountName),
-    $db->real_escape_string($obj->email)
+    $db->real_escape_string($obj->email),
+    $db->real_escape_string($obj->password)
 );
 
 $reader = $db->query($query);

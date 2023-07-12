@@ -7,6 +7,7 @@ DELIMITER $$
 CREATE PROCEDURE create_account(
   IN accountNamex VARCHAR(64),
   IN emailx VARCHAR(64),
+  IN passwordx VARCHAR(64),
   OUT nonce INT,
   OUT success BIT,
   OUT reason VARCHAR(64)

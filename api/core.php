@@ -49,6 +49,7 @@ function getInput() {
 
     validateAccountName($obj);
     validateEmail($obj);
+    validatePassword($obj);
     validateNonce($obj);
 
     return $obj;
@@ -79,11 +80,28 @@ function validateEmail($obj) {
     // Do a better match than that...
 }
 
+function validatePassword($obj) {
+	if(!isset($obj->password)) return;
+    $obj->password = trim($obj->password);
+
+    if(strlen($obj->password) > 64) {
+        showError('Password is too long');
+    }
+    if(strlen($obj->password) < 8) {
+        showError('Password is too short');
+    }
+    // TODO: Regex match
+    // at least one lowercase letter
+    // at least one uppercase letter
+    // at least one number
+    // at least one symbol
+} 
+
 function validateNonce($obj) {
 	if(!isset($obj->nonce)) return;
 
     $obj->nonce = trim($obj->nonce);
-    if(strlen($obj->nonce) != 32) {
+    if(strlen($obj->nonce) != 6) {
         showError('invalid token');
     }
     // TODO: Regex match $[\da-f]^

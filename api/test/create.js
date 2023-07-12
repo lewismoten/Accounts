@@ -13,7 +13,8 @@ function test_create() {
     }
     request.send(JSON.stringify({
         accountName: document.getElementById('accountName').value,
-        email: document.getElementById('email').value
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
     }));
 }
 

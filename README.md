@@ -4,7 +4,10 @@ Setup a simple website that allows you to create and manage accounts password, e
 
 - Create account for user name and email
 - Verify email before asking to associate a password
+- Validate alpha-numeric account name between 3-64 characters
+- Validate email up to 64 characters
 - Associate a password after verifying email
+- Salt and hash passwords
 - Change email only after new email is verified
 - Reset password
 - Add & Remove two-factor authentication

@@ -15,6 +15,7 @@ Setup a simple full-stack PHP & MySQL website that allows you to create and mana
 - Resend verification email
 - Reset password
 - Add & Remove two-factor authentication
+- Enforce old passwords to change
 - Localization (nice to have...)
 
 ## Structure

@@ -18,7 +18,7 @@ if($reader === false) {
 	showError('error querying against database');
 }
 
-$query = 'SELECT HEX(@p0) AS `nonce`;';
+$query = 'SELECT @p0 AS `nonce`;';
 $reader = $db->query($query);
 
 if($reader === false) {

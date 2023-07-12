@@ -4,7 +4,7 @@ CREATE TABLE Tokens (
   AccountId BINARY(16) NOT NULL COMMENT 'The account identity',
   TokenTypeId TINYINT NOT NULL COMMENT 'The type of token',
   Email varchar(64) NOT NULL COMMENT 'The email address',
-  Nonce BINARY(16) NOT NULL COMMENT 'The token',
+  Nonce INT NOT NULL COMMENT 'The token',
   Created TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'When the token was generated',
   FOREIGN KEY (AccountId) REFERENCES Accounts (AccountId),
   FOREIGN KEY (TokenTypeId) REFERENCES TokenTypes (TokenTypeId)

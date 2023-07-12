@@ -11,7 +11,9 @@ BEGIN
 
 	START TRANSACTION;
 
-    DELETE FROM Tokens WHERE AccountId IN (SELECT AccountId from Accounts where AccountName = accountName);
+    DELETE FROM Tokens WHERE AccountId IN (
+      SELECT AccountId from Accounts where AccountName = accountName
+    );
 
     DELETE FROM Accounts WHERE AccountName = accountName;
 

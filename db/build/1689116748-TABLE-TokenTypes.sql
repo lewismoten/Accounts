@@ -5,7 +5,6 @@ CREATE TABLE TokenTypes (
   TokenTypeName VARCHAR(64) NOT NULL COMMENT 'Name of the token type'
 ) COMMENT 'Types of tokens emailed';
 
-
 ALTER TABLE TokenTypes 
 ADD PRIMARY KEY (TokenTypeId)
 COMMENT 'Identifier for Token Type';

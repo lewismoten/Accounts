@@ -7,7 +7,7 @@ DELIMITER $$
 CREATE PROCEDURE create_account(
   IN accountNamex VARCHAR(64),
   IN emailx VARCHAR(64),
-  IN passwordx VARCHAR(64),
+  IN pepperedPassword CHAR(32),
   OUT nonce INT,
   OUT success BIT,
   OUT reason VARCHAR(64)
@@ -47,7 +47,7 @@ BEGIN
         ) VALUES (
             accountId,
             salt,
-            UNHEX(MD5(CONCAT(HEX(salt), passwordx)))
+            UNHEX(MD5(CONCAT(HEX(salt), pepperedPassword)))
         );
 
         INSERT INTO Tokens (

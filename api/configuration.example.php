@@ -10,4 +10,7 @@ define( 'DB_NAME',     '' );
 define( 'UI_URL',      '' );
 define( 'EMAIL_FROM',  '' );
 
+// Pepper is used to hash passwords before sending them to the database
+define( 'PW_PEPPER',   '' );
+
 ?>

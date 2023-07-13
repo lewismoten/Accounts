@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import theme from './theme';
 
 const INITIAL_STATE = {};
-const reducers = {};
+const reducers = {
+    theme
+};
 
 const sliceReducers = combineReducers(reducers);
 

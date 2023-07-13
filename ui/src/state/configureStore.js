@@ -1,8 +1,7 @@
 /* eslint-env node */
-import { configureStore, applyMiddleware } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import reduxSaga from 'redux-saga';
 import reduxThunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 import rootReducer from './index';
 import rootSaga from './saga';
@@ -11,11 +10,13 @@ const sagaMiddleware = reduxSaga();
 
 const initialState = undefined;
 
-const enhance = applyMiddleware(reduxThunk, sagaMiddleware);
-const composed = composeWithDevTools({})(enhance);
-
 const configureStore2 = () => {
-  const store = configureStore(rootReducer, initialState, composed);
+  const store = configureStore({
+    reducer: rootReducer, 
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(reduxThunk, sagaMiddleware),
+    devTools: process.env.NODE_ENV !== 'production',
+    preloadedState: initialState
+  });
 
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {};
